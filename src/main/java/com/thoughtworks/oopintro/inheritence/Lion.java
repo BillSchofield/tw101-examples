@@ -6,7 +6,7 @@ public class Lion extends Cat {
     }
 
     @Override
-    public void speak() {
-        System.out.print("Roar");
+    public String speak() {
+        return "Roar";
     }
 }

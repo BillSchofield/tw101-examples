@@ -6,8 +6,8 @@ public class HouseCat extends Cat {
     }
 
     @Override
-    public void speak() {
-        System.out.print("Meow");
+    public String speak() {
+        return "Meow";
     }
 
 }

@@ -8,13 +8,13 @@ public abstract class Cat {
         this.name = name;
     }
 
-    public void name() {
-        System.out.print(name);
+    public String name() {
+        return name;
     }
 
-    public void move(){
-        System.out.print("Slinks");
+    public String move(){
+        return "Slinks";
     }
 
-    public abstract void speak();
+    public abstract String speak();
 }
