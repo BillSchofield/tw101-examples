@@ -21,13 +21,9 @@ public class Main {
         System.out.println("This means that ALL cats slink.");
     }
 
+
+    // This method is smelly how can we change it to improve encapsulation
     private static void moveAndSpeak(Cat cat) {
-        System.out.print("The ");
-        cat.name();
-        System.out.print(" ");
-        cat.move();
-        System.out.print(" and then says ");
-        cat.speak();
-        System.out.println();
+        System.out.println("The " + cat.name() + " " + cat.move() + " and then says " + cat.speak());
     }
 }
