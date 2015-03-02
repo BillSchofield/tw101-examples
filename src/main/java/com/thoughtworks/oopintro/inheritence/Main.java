@@ -6,11 +6,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Cat houseCat = new HouseCat();
-        Cat tiger = new Lion();
+        Cat lion = new Lion();
 
         List<Cat> cats = new ArrayList<Cat>();
         cats.add(houseCat);
-        cats.add(tiger);
+        cats.add(lion);
 
         for (Cat cat : cats) {
             moveAndSpeak(cat);
