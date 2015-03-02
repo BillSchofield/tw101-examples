@@ -1,7 +1,5 @@
 package com.thoughtworks.oopintro.exceptions;
 
-import java.io.IOException;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -24,8 +22,8 @@ public class Main {
 
     private static void throwAndCatchYourOwnExceptions() {
         try{
-            throw new BillsAwesomeRuntimeException();
-        } catch (BillsAwesomeRuntimeException exception){
+            throw new BillsRuntimeException();
+        } catch (BillsRuntimeException exception){
             System.out.println("Catching a specific exception keeps us from accidentally trying to handle the wrong exception.");
         }
     }

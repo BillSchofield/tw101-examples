@@ -44,11 +44,11 @@ public class HashMapTest {
 
     @Test
     public void shouldNotPutKeysInAlphabeticalOrder(){
-        stringToStringMap.put("cc", "");
+        stringToStringMap.put("c", "");
         stringToStringMap.put("a", "");
 
 
-        String[] inAlphabeticalOrder = {"a", "cc"};
+        String[] inAlphabeticalOrder = {"a", "c"};
 
         Set<String> keySet = stringToStringMap.keySet();
         String[] keys = new String[2];

@@ -37,10 +37,10 @@ public class HashSetTest {
 
     @Test
     public void shouldNotBeInOrderAdded(){
-        setOfStrings.add("b");
-        setOfStrings.add("a");
+        setOfStrings.add("bb");
+        setOfStrings.add("aa");
 
-        String[] inOrder = {"b", "a"};
+        String[] inOrder = {"bb", "aa"};
 
         String[] actual = new String[2];
         setOfStrings.toArray(actual);
