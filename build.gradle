@@ -1,6 +1,9 @@
+import static org.gradle.api.JavaVersion.VERSION_1_7
+
 apply plugin: 'java'
 
-version = '1.0'
+project.version = VERSION_1_7
+version = project.version
 
 repositories {
     mavenCentral()
