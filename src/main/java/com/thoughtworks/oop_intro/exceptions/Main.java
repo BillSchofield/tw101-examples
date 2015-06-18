@@ -1,5 +1,8 @@
 package com.thoughtworks.oop_intro.exceptions;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,6 +11,25 @@ public class Main {
         runtimeExceptionsAreExceptions();
         throwAndCatchYourOwnExceptions();
         orElseYouCouldHandleTheWrongException();
+        youCanAlsoRethrowCheckedExceptionsAsRuntimeExceptions();
+    }
+
+    private static void youCanAlsoRethrowCheckedExceptionsAsRuntimeExceptions() {
+        // Instead of this...
+        String aString = "";
+        BufferedReader bufferedReader = new BufferedReader(null);
+        try {
+            aString = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(aString);
+
+        // You could do this...
+        BillsAwesomeBufferedReader reader = new BillsAwesomeBufferedReader(null);
+        String anotherString = reader.readLine();
+        System.out.println(anotherString);
+
     }
 
     private static void orElseYouCouldHandleTheWrongException() {
@@ -40,7 +62,7 @@ public class Main {
 
     private static void exceptionsAreThrowable() {
         try{
-            throwsCheckedException();
+            throw new Exception();
         } catch(Throwable throwable){
             System.out.println("Exceptions are Throwable");
         }

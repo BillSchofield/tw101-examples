@@ -6,7 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Set<Customer> customers = new HashSet<>();
         customers.add(new Customer("ThoughtWorks", "1", previousOrders(3)));
+        customers.add(new Customer("ThoughtWorks", "1", previousOrders(3)));
         customers.add(new Customer("Google", "2", previousOrders(2)));
+
+        for (Customer customer : customers) {
+            customer.report();
+        }
+
 
         Customer result = find(customers, new Customer("ThoughtWorks", "1", previousOrders(3)));
         result.report();

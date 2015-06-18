@@ -29,8 +29,8 @@ public class HashMapTest {
 //        String name = reader.readLine();
 //        System.out.println(name + "'s age is " + nameToAge.get(name));
 
-        for (String n : nameToAge.keySet()) {
-            System.out.println(n);
+        for (String name : nameToAge.keySet()) {
+            System.out.println(name + " is " + nameToAge.get(name) + " years old");
         }
 
 
