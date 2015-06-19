@@ -2,7 +2,6 @@ import static org.gradle.api.JavaVersion.VERSION_1_7
 
 apply plugin: 'java'
 
-project.version = VERSION_1_7
 version = project.version
 
 repositories {
