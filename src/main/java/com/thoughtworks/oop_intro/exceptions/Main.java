@@ -2,31 +2,46 @@ package com.thoughtworks.oop_intro.exceptions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
-    public static void main(String[] args) {
-        errorsAreThrowable();
-        exceptionsAreThrowable();
-        runtimeExceptionsAreExceptions();
-        throwAndCatchYourOwnExceptions();
-        orElseYouCouldHandleTheWrongException();
-        youCanAlsoRethrowCheckedExceptionsAsRuntimeExceptions();
+    public static void main(String[] args) throws IOException {
+
+
+        String option = "";
+        BufferedReader reader = null;
+        Library library = null;
+        PrintStream printStream = System.out;
+
+        Map<String, Command> commandMap = new HashMap<>();
+        commandMap.put("1", new ShowBooksCommand(library));
+        commandMap.put("2", new CheckoutBookCommand(library, reader));
+
+        while(!option.equals("Quit")){
+            option = reader.readLine();
+            if(!option.equals("Quit")) {
+                printStream.println("Select Valid Option!");
+            }
+            if (commandMap.containsKey(option)){
+                commandMap.get(option).execute();
+            }
+
+        }
+
     }
 
     private static void youCanAlsoRethrowCheckedExceptionsAsRuntimeExceptions() {
         // Instead of this...
         String aString = "";
-        BufferedReader bufferedReader = new BufferedReader(null);
-        try {
-            aString = bufferedReader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        BillsAwesomeBufferedReader bufferedReader = new BillsAwesomeBufferedReader(new BufferedReader(null));
+        aString = bufferedReader.readLine();
         System.out.println(aString);
 
         // You could do this...
-        BillsAwesomeBufferedReader reader = new BillsAwesomeBufferedReader(null);
+        BillsAwesomeBufferedReader reader = new BillsAwesomeBufferedReader(new BufferedReader(null));
         String anotherString = reader.readLine();
         System.out.println(anotherString);
 
@@ -35,7 +50,7 @@ public class Main {
     private static void orElseYouCouldHandleTheWrongException() {
         try{
             throw new SpecializedRuntimeException();
-        } catch (RuntimeException exception){
+        } catch (Exception exception){
             System.out.println("We're catching all Runtime Exceptions when we only want to catch our specialized Runtime Exceptions");
         }
     }
