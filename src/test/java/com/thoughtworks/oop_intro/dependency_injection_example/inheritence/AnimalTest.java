@@ -2,7 +2,9 @@ package com.thoughtworks.oop_intro.dependency_injection_example.inheritence;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.*;
 
 public class AnimalTest {
 

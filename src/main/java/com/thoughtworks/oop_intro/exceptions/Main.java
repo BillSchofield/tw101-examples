@@ -2,36 +2,9 @@ package com.thoughtworks.oop_intro.exceptions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.InputStreamReader;
 
 public class Main {
-
-    public static void main(String[] args) throws IOException {
-
-
-        String option = "";
-        BufferedReader reader = null;
-        Library library = null;
-        PrintStream printStream = System.out;
-
-        Map<String, Command> commandMap = new HashMap<>();
-        commandMap.put("1", new ShowBooksCommand(library));
-        commandMap.put("2", new CheckoutBookCommand(library, reader));
-
-        while(!option.equals("Quit")){
-            option = reader.readLine();
-            if(!option.equals("Quit")) {
-                printStream.println("Select Valid Option!");
-            }
-            if (commandMap.containsKey(option)){
-                commandMap.get(option).execute();
-            }
-
-        }
-
-    }
 
     private static void youCanAlsoRethrowCheckedExceptionsAsRuntimeExceptions() {
         // Instead of this...
