@@ -7,9 +7,8 @@ _"Flexible code is loosely coupled and highly cohesive."_
 
 [**Cohesion**](https://en.wikipedia.org/wiki/Coupling_\(computer_programming\)) of a code module is the degree to which its elements belong together. Higher cohesion is better.
 
-## The Four Major Principles of Object Oriented Design
+## The Major Principles of Object Oriented Design
 ### Encapsulation
-### Data Abstraction
 ### Polymorphism
 ### Inheritance
 

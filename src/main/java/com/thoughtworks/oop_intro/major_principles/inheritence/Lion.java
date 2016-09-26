@@ -1,4 +1,4 @@
-package com.thoughtworks.oop_intro.inheritence;
+package com.thoughtworks.oop_intro.major_principles.inheritence;
 
 public class Lion extends Cat {
     public Lion() {

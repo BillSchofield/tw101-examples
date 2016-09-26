@@ -1,4 +1,4 @@
-package com.thoughtworks.oop_intro.inheritence;
+package com.thoughtworks.oop_intro.major_principles.inheritence;
 
 import org.junit.Before;
 import org.junit.Test;
