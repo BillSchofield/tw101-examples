@@ -59,7 +59,11 @@ of inheriting from class Person, class Employee could give each Employee object 
 has the opportunity to hide from external code even if class Person has many public attributes or methods. Some 
 languages, like Go do not support inheritance at all.
 
+### Dependency Injection
+
 ### Tell, Don't Ask
+
+### Outside-In/Top-Down Development
 
 ## SOLID Principles
 
