@@ -1,20 +1,51 @@
 package com.thoughtworks.tw101_examples.java_language_features.exceptions;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 
+    public static void main(String[] args) throws IOException {
+        examplesOfTheTwoWaysToHandleExceptions();
+    }
+
+    private static void examplesOfTheTwoWaysToHandleExceptions() throws IOException {
+        addExceptionToMethodSignature();
+        surroundWithTryCatch();
+    }
+
+    private static void addExceptionToMethodSignature() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        bufferedReader.readLine();
+    }
+
+    private static void surroundWithTryCatch() {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private static void youCanAlsoRethrowCheckedExceptionsAsRuntimeExceptions() {
         // Instead of this...
-        BillsAwesomeBufferedReader bufferedReader = new BillsAwesomeBufferedReader(new BufferedReader(null));
-        String aString = bufferedReader.readLine();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String aString = null;
+        try {
+            aString = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println(aString);
+
+
 
         // You could do this...
         BillsAwesomeBufferedReader reader = new BillsAwesomeBufferedReader(new BufferedReader(null));
         String anotherString = reader.readLine();
         System.out.println(anotherString);
-
     }
 
     private static void orElseYouCouldHandleTheWrongException() {
